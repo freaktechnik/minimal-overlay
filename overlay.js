@@ -42,6 +42,9 @@ Overlay.prototype = {
         }
         return dialog;
     },
+    get isShowing() {
+        return !this._overlay.hasAttribute("hidden");
+    },
     show: function() {
         this._overlay.removeAttribute("hidden");
         this.getMain().setAttribute("aria-hidden", true);
