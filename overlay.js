@@ -7,11 +7,17 @@
 
 function Overlay(el) {
         this._overlay = el;
+
         this.hide = this.hide.bind(this);
         this._prevent = this._prevent.bind(this);
+        this._keyboardHide = this._keyboardHide.bind(this);
+
         this._overlay.addEventListener("click", this.hide, false);
-        this.getDialog().addEventListener("click", this._prevent, true);
         this._overlay.classList.add("so-backdrop");
+
+        var dialog = this.getDialog();
+        dialog.addEventListener("click", this._prevent, true);
+        dialog.addEventListener("keyup", this._keyboardHide, false);
 }
 
 Overlay.prototype = {
@@ -55,5 +61,10 @@ Overlay.prototype = {
             e.stopPropagation();
         else
             e.preventBubble();
+    },
+    _keyboardHide: function(e) {
+        if(e.key == "Esc" || e.key == "Escape" || e.keyCode == 23) {
+            this.hide();
+        }
     }
 };
