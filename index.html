@@ -1,0 +1,41 @@
+<!DOCTPYE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Overlay</title>
+        <link rel="stylesheet" type="text/css" href="overlay.css">
+        <script type="text/javascript" src="overlay.js"></script>
+        <script type="text/javascript">
+            window.addEventListener("load", function() {
+                var overlay = new Overlay(document.getElementById("overlay"));
+                document.getElementById("show").addEventListener("click", function() {
+                    overlay.show();
+                });
+            });
+        </script>
+        <style type="text/css">
+            #overlay {
+                background: rgba(0, 0, 0, 0.7);
+            }
+            dialog {
+                margin: 1em auto;
+                background: white;
+                max-width: 500px;
+                padding: .5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="overlay" hidden>
+            <dialog>
+                <h1>Example</h1>
+                <!-- overlay content goes here -->
+            </dialog>
+        </div>
+        <main>
+            <h1>Simple Overlay</h1>
+            <p>With proper aria support n' stuff</p>
+            <button id="show">Show Overlay</button>
+        </main>
+    </body>
+</html>

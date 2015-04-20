@@ -1,0 +1,22 @@
+
+
+[hidden] {
+    display: none;
+    visibility: hidden;
+}
+
+.so-backdrop {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.so-backdrop dialog,
+.so-backdrop [role='dialog'] {
+    position: relative;
+    display: block;
+}
