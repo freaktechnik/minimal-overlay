@@ -51,6 +51,7 @@ Overlay.prototype = {
         var dialog = this.getDialog();
         dialog.setAttribute("tabindex", 0);
         dialog.focus();
+        this._emit("show");
     },
     hide: function() {
         this._overlay.setAttribute("hidden", true);
@@ -58,6 +59,7 @@ Overlay.prototype = {
         main.setAttribute("aria-hidden", false);
         main.focus();
         this.getDialog().removeAttribute("tabindex");
+        this._emit("hide");
     },
     _prevent: function(e) {
         if("stopPropagation" in e)
@@ -69,5 +71,9 @@ Overlay.prototype = {
         if(e.key == "Esc" || e.key == "Escape" || e.keyCode == 23) {
             this.hide();
         }
+    },
+    _emit: function(name) {
+        var e = new Event(name);
+        return this._overlay.dispatchEvent(e);
     }
 };
