@@ -39,12 +39,16 @@ Overlay.prototype = {
     show: function() {
         this._overlay.removeAttribute("hidden");
         this.getMain().setAttribute("aria-hidden", true);
-        this.getDialog().focus();
+        var dialog = this.getDialog();
+        dialog.setAttribute("tabindex", 0);
+        dialog.focus();
     },
     hide: function() {
         this._overlay.setAttribute("hidden", true);
-        this.getMain().setAttribute("aria-hidden", false);
-        this.getMain().focus();
+        var main = this.getMain();
+        main.setAttribute("aria-hidden", false);
+        main.focus();
+        this.getDialog().removeAttribute("tabindex");
     },
     _prevent: function(e) {
         if("stopPropagation" in e)
