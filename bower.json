@@ -1,5 +1,5 @@
 {
-	"name": "simple-overlay",
+	"name": "minimal-overlay",
 	"version": "1.0.0",
 	"description": "Minimalistic overlay code with accessibility by default.",
 	"keywords":
@@ -11,7 +11,7 @@
 	[
 		"Martin Giger"
 	],
-	"homepage": "http://freaktechnik.github.io/simple-overlay",
+	"homepage": "http://freaktechnik.github.io/minimal-overlay",
 	"main": [ "./overlay.js", "./overlay.css" ],
 	"ignore":
 	[
@@ -20,6 +20,6 @@
 	"repository":
 	{
 		"type": "git",
-		"url": "git://github.com/freaktechnik/simple-overlay.git"
+		"url": "git://github.com/freaktechnik/minimal-overlay.git"
 	}
 }
