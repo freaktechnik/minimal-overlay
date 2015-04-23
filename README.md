@@ -1,4 +1,4 @@
-simple-overlay
+minimal-overlay
 ==============
 Simple overlay is a minimal script (plus styles) to create an accessible overlay.
 The only implemented control is closing the overlay by pressing `Esc` on the
@@ -7,6 +7,10 @@ keyboard.
 License
 -------
 See the [LICENSE](LICENSE) file.
+
+Installation
+-----------
+You can install this package using `bower install minimal-overlay --save`.
 
 Usage
 -----
